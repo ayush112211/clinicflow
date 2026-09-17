@@ -1,27 +1,32 @@
 {
-  "name": "clinicflow-root",
+  "name": "clinicflow-server",
   "version": "1.0.0",
   "private": true,
-  "description": "ClinicFlow - Conflict-Free Clinic Front Desk Appointment System",
+  "description": "Backend API for ClinicFlow Front Desk Management System",
+  "main": "dist/index.js",
   "scripts": {
-    "install:server": "cd server && npm i",
-    "install:client": "cd client && npm i",
-    "install:all": "cd server && npm i && cd ../client && npm i",
-    "dev:server": "cd server && npm run dev",
-    "dev:client": "cd client && npm run dev",
-    "build:server": "cd server && npm run build",
-    "build:client": "cd client && npm run build",
-    "build": "cd server && npm run build && cd ../client && npm run build",
-    "test:server": "cd server && npm test",
-    "start": "cd server && npm start"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "seed": "ts-node src/seed.ts",
+    "test": "node --require ts-node/register --test --test-concurrency=1 src/tests/booking.test.ts"
   },
-  "keywords": [
-    "clinic",
-    "appointment-scheduling",
-    "conflict-prevention",
-    "fair-cancellation",
-    "front-desk"
-  ],
-  "author": "ap11221",
-  "license": "MIT"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "sql.js": "^1.12.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "^22.10.1",
+    "@types/sql.js": "^1.4.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
 }
