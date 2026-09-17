@@ -1,0 +1,27 @@
+{
+  "name": "clinicflow-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ClinicFlow - Conflict-Free Clinic Front Desk Appointment System",
+  "scripts": {
+    "install:server": "cd server && npm i",
+    "install:client": "cd client && npm i",
+    "install:all": "cd server && npm i && cd ../client && npm i",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "build": "cd server && npm run build && cd ../client && npm run build",
+    "test:server": "cd server && npm test",
+    "start": "cd server && npm start"
+  },
+  "keywords": [
+    "clinic",
+    "appointment-scheduling",
+    "conflict-prevention",
+    "fair-cancellation",
+    "front-desk"
+  ],
+  "author": "ap11221",
+  "license": "MIT"
+}
